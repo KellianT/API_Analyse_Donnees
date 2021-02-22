@@ -13,7 +13,7 @@ https://data.un.org/_Docs/SYB/CSV/SYB63_310_202009_Carbon%20Dioxide%20Emission%2
 @app.route('/')
 def hello_world():
     #utilisé pour tester si l'app fonctionne bien
-    return 'Hello, World!'
+    return 'SALUT EMILIE CA VA ?!'
 
 @app.route('/latest_by_country/<country>')
 def by_country(country):
