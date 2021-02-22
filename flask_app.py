@@ -12,5 +12,8 @@ board = pandas.read_csv(url, header = 1, usecols=['Region/Country/Area', 'Unname
 db_onu = board.rename(columns={'Region/Country/Area': 'num', 'Unnamed: 1': 'Country'})
 print(db_onu.head(12))
 
-# if __name__=="__main__":
-#     app.run(debug=True)
+
+
+if __name__=="__main__":
+    app.run(debug=True)
+
