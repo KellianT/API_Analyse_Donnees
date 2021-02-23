@@ -8,13 +8,8 @@ app = Flask(__name__)
 
 logging.basicConfig(level=logging.DEBUG)
 
-<<<<<<< HEAD
 
 board = pd.read_csv('onu.csv', header=1, usecols=['Region/Country/Area', 'Unnamed: 1', 'Value', 'Year', 'Series'])
-=======
-#url = 'https://data.un.org/_Docs/SYB/CSV/SYB63_310_202009_Carbon%20Dioxide%20Emission%20Estimates.csv'
-board = pd.read_csv('onu.csv', header = 1, usecols=['Region/Country/Area', 'Unnamed: 1', 'Value', 'Year', 'Series'])
->>>>>>> origin
 db_onu = board.rename(columns={'Region/Country/Area': 'num', 'Unnamed: 1': 'Country'})
 
 
@@ -49,7 +44,6 @@ def by_country(country):
         print("erreur 404")
     #erreur 404 si on demande un pays qui n'est pas connu
     #     abort(404)
-<<<<<<< HEAD
 
 
 @app.route('/average_by_year/<year>')
@@ -67,31 +61,4 @@ def average_for_year(year):
 
 
 if  __name__ == "__main__":
-=======
-# print(hello_world())
-# print(by_country('ALBAnia'))
-
-@app.route('/average_by_year/<year>')
-def average_for_year(year):
-    
-    
-    # file = open("onu.csv","r")
-    # test=csv.reader(file)
-    # for row in test:
-    #     print(row[1])
-
-    #on cherche la moyenne des émissions totales au niveau mondial pour une année demandée
-    # logging.debug(f"Année demandée : {year}")
-    all_years = list(set(db_onu['Year'].to_list()))
-    #print(all_years)
-    if year in all_years:
-        df = db_onu[(db_onu['Year'] == year) & (db_onu['Series'] == 'Emissions (thousand metric tons of carbon dioxide)')]
-        mean_df= df.mean().round()['Value']
-        return json.dumps({"year":"1975", "total":mean_df})
-    else:
-        #abort(404)
-        print("c'est la zone")
-#print(average_for_year(2015))
-if __name__ == "__main__":
->>>>>>> origin
     app.run()
