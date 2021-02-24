@@ -8,8 +8,12 @@ import unittest
 
 logging.basicConfig(level=logging.DEBUG)
 
-db_onu = pandas.read_csv('onu.csv', header = 2, names = [ 'num','Country', 'Year','Emission','Value','Footnote','Source'])
+def voir_csv(csv):
+    db_onu = pandas.read_csv(csv, header = 2, names = [ 'num','Country', 'Year','Emission','Value','Footnote','Source'])
+    return db_onu
 
+
+db_onu = voir_csv("onu.csv")
 
 # def all_countries(database)
 #     countries = list(set(database['Region'].to_list()))
@@ -27,15 +31,30 @@ def hello_world():
 def by_country(country):
     #on veut la valeur la plus récente des emissions totales pour le pays demandé
     logging.debug(f"Pays demandé : {country}")
-    country = country.title()
-    countries = list(set(db_onu['Country'].to_list()))
-    if country in countries:  
-        country_emission = db_onu[(db_onu["Country"] == country) & (db_onu["Year"]==2017)].head(1)
-        result = country_emission[['Country', 'Year', 'Value']].to_json(orient='records')
-        parsed = json.loads(result)
-        return json.dumps(parsed)
+    db_onu = voir_csv("onu.csv")
+    if country_inall_countries(country, db_onu):
+       bycountryjson = by_country_pandas(country,db_onu)
+       return bycountryjson
     else:
         print("erreur 404")
+
+
+def country_inall_countries(country,db_onu):
+    country = country.title()
+    countries = list(set(db_onu['Country'].to_list()))
+    if country in countries:
+        return True
+    else:
+        return False
+
+
+def by_country_pandas(country,db_onu):
+    country_emission = db_onu[(db_onu["Country"] == country) & (db_onu["Year"]==2017)].head(1)
+    result = country_emission[['Country', 'Year', 'Value']].to_json(orient='records')
+    parsed = json.loads(result)
+    return json.dumps(parsed)
+
+print(by_country_pandas('Albania',db_onu))
 
 #print(hello_world())
 #print(by_country('ALBAnia'))
@@ -80,7 +99,7 @@ def per_capita(country):
 if __name__ == "__main__":
     app.run(debug=True)
 
-
+db_onu = voir_csv("onu.csv")
 
 
 ''' #def all_countries()
