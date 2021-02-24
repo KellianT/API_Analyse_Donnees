@@ -83,19 +83,23 @@ def average_for_year(year):
 @app.route('/per_capita/<country>')
 def per_capita(country):
     logging.debug(f"Pays demandé : {country}")
-    country = country.title()
-    countries = list(set(db_onu['Country'].to_list()))
-    if country in countries: 
-        df_capita = db_onu[(db_onu["Country"] == country) & (db_onu["Emission"]=="Emissions per capita (metric tons of carbon dioxide)")]  
-        df_capita = df_capita[['Year', 'Value']]
-        print(df_capita)
-        result = df_capita.to_json(orient='records')
-        parsed = json.loads(result)
-        return json.dumps(parsed)
+    if country_inall_countries(country, db_onu): 
+        emissions_tojson = per_capita_to_json(country, db_onu)
+        return emissions_tojson
+    
     else:
         #erreur 404 si on demande un pays qui n'est pas connu
         abort(404)
-#print(per_capita('Albania'))
+
+def per_capita_to_json(country, db_onu):
+
+    df_capita = db_onu[(db_onu["Country"] == country) & (db_onu["Emission"]=="Emissions per capita (metric tons of carbon dioxide)")]  
+    df_capita = df_capita[['Year', 'Value']]
+    result = df_capita.to_json(orient='records')
+    parsed = json.loads(result)
+    return json.dumps(parsed)
+print(per_capita_to_json('Albania', db_onu))
+
 
 if __name__ == "__main__":
     app.run(debug=True)
