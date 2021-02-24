@@ -11,16 +11,8 @@ logging.basicConfig(level=logging.DEBUG)
 def voir_csv(csv):
     db_onu = pandas.read_csv(csv, header = 2, names = [ 'num','Country', 'Year','Emission','Value','Footnote','Source'])
     return db_onu
-
-
 db_onu = voir_csv("onu.csv")
 
-# def all_countries(database)
-#     countries = list(set(database['Region'].to_list()))
-#     return countries
-#print(all_countries(db_onu))
-
-#def al_years()
 
 @app.route('/')
 def hello_world():
@@ -54,29 +46,38 @@ def by_country_pandas(country,db_onu):
     parsed = json.loads(result)
     return json.dumps(parsed)
 
-print(by_country_pandas('Albania',db_onu))
+#print(by_country_pandas('Albania',db_onu))
 
 #print(hello_world())
 #print(by_country('ALBAnia'))
+
+def all_years(year, db_onu):
+    all_years = list(set(db_onu['Year'].to_list()))
+    if int(year) in all_years: 
+        return True
+    else: 
+        return False
+
+def mean_to_json(year, db_onu): 
+    df = db_onu.loc[db_onu['Year'].isin([year])]
+    df = df[(df["Emission"]=='Emissions (thousand metric tons of carbon dioxide)')]
+    df_mean = df.mean()['Value']
+    result = {}
+    result['year'] = year
+    result['total'] = df_mean
+    return json.dumps(result)
+
 
 @app.route('/average_by_year/<year>')
 def average_for_year(year):
     #on cherche la moyenne des émissions totales au niveau mondial pour une année demandée
     logging.debug(f"Année demandée : {year}")
-    
-    all_years = list(set(db_onu['Year'].to_list()))
-    if int(year) in all_years:
-        df = db_onu.loc[db_onu['Year'].isin([year])]
-        df = df[(df["Emission"]=='Emissions (thousand metric tons of carbon dioxide)')]
-        df_mean = df.mean()['Value']
-        result = {}
-        result['year'] = year
-        result['total'] = df_mean
-        return json.dumps(result)
+    if all_years(year, db_onu):
+        mean_value = mean_to_json(year, db_onu)
+        return mean_value
     else:
         print("erreur 404")
 
-#print(average_for_year(1975))
 
 
 @app.route('/per_capita/<country>')
@@ -99,7 +100,7 @@ def per_capita(country):
 if __name__ == "__main__":
     app.run(debug=True)
 
-db_onu = voir_csv("onu.csv")
+
 
 
 ''' #def all_countries()
