@@ -8,12 +8,82 @@ import unittest
 
 logging.basicConfig(level=logging.DEBUG)
 
-#url = 'https://data.un.org/_Docs/SYB/CSV/SYB63_310_202009_Carbon%20Dioxide%20Emission%20Estimates.csv'
-board = pandas.read_csv('onu.csv', header = 1, usecols=['Region/Country/Area', 'Unnamed: 1', 'Value', 'Year', 'Series'])
-db_onu = board.rename(columns={'Region/Country/Area': 'num', 'Unnamed: 1': 'Country'})
-#print(db_onu.head(1))
+db_onu = pandas.read_csv('onu.csv', header = 2, names = [ 'num','Country', 'Year','Emission','Value','Footnote','Source'])
 
-#def all_countries()
+
+# def all_countries(database)
+#     countries = list(set(database['Region'].to_list()))
+#     return countries
+#print(all_countries(db_onu))
+
+#def al_years()
+
+@app.route('/')
+def hello_world():
+    #utilisé pour tester si l'app fonctionne bien
+    return 'Hello, World'
+
+@app.route('/latest_by_country/<country>')
+def by_country(country):
+    #on veut la valeur la plus récente des emissions totales pour le pays demandé
+    logging.debug(f"Pays demandé : {country}")
+    country = country.title()
+    countries = list(set(db_onu['Country'].to_list()))
+    if country in countries:  
+        country_emission = db_onu[(db_onu["Country"] == country) & (db_onu["Year"]==2017)].head(1)
+        result = country_emission[['Country', 'Year', 'Value']].to_json(orient='records')
+        parsed = json.loads(result)
+        return json.dumps(parsed)
+    else:
+        print("erreur 404")
+
+#print(hello_world())
+#print(by_country('ALBAnia'))
+
+@app.route('/average_by_year/<year>')
+def average_for_year(year):
+    #on cherche la moyenne des émissions totales au niveau mondial pour une année demandée
+    logging.debug(f"Année demandée : {year}")
+    
+    all_years = list(set(db_onu['Year'].to_list()))
+    if int(year) in all_years:
+        df = db_onu.loc[db_onu['Year'].isin([year])]
+        df = df[(df["Emission"]=='Emissions (thousand metric tons of carbon dioxide)')]
+        df_mean = df.mean()['Value']
+        result = {}
+        result['year'] = year
+        result['total'] = df_mean
+        return json.dumps(result)
+    else:
+        print("erreur 404")
+
+#print(average_for_year(1975))
+
+
+@app.route('/per_capita/<country>')
+def per_capita(country):
+    logging.debug(f"Pays demandé : {country}")
+    country = country.title()
+    countries = list(set(db_onu['Country'].to_list()))
+    if country in countries: 
+        df_capita = db_onu[(db_onu["Country"] == country) & (db_onu["Emission"]=="Emissions per capita (metric tons of carbon dioxide)")]  
+        df_capita = df_capita[['Year', 'Value']]
+        print(df_capita)
+        result = df_capita.to_json(orient='records')
+        parsed = json.loads(result)
+        return json.dumps(parsed)
+    else:
+        #erreur 404 si on demande un pays qui n'est pas connu
+        abort(404)
+#print(per_capita('Albania'))
+
+if __name__ == "__main__":
+    app.run(debug=True)
+
+
+
+
+''' #def all_countries()
 #    countries = list(set(df['Region'].to_list()))
 #def par_pays (à appeler dans by_country)
 
@@ -43,4 +113,4 @@ print(hello_world())
 print(by_country('ALBAnia'))
 
 if __name__ == "__main__":
-    app.run()
+    app.run() '''
