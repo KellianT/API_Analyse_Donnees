@@ -69,7 +69,7 @@ def by_country(country):
        bycountryjson = by_country_to_json(country,db_onu)
        return bycountryjson
     else:
-        print("erreur 404")
+        abort(404)
 
 
 @app.route('/average_by_year/<year>')
@@ -81,7 +81,7 @@ def average_for_year(year):
         mean_value = mean_to_json(year, db_onu)
         return mean_value
     else:
-        print("erreur 404")
+        abort(404)
 
 
 
