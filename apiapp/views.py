@@ -1,6 +1,6 @@
 import json
 import logging
-from flask import Flask, abort
+from flask import Flask, abort, jsonify
 app = Flask(__name__)
 import csv
 import pandas
@@ -24,7 +24,7 @@ def by_country(country):
     country = country.title()
     if fct.country_inall_countries(country, db_onu):
        bycountryjson = fct.by_country_to_json(country,db_onu)
-       return bycountryjson
+       return jsonify(bycountryjson)
     else:
         abort(404)
 
@@ -36,7 +36,7 @@ def average_for_year(year):
     db_onu = fct.voir_csv("onu.csv")
     if fct.year_inall_years(year, db_onu):
         mean_value = fct.mean_to_json(year, db_onu)
-        return mean_value
+        return jsonify(mean_value)
     else:
         abort(404)
 
@@ -49,7 +49,7 @@ def per_capita(country):
     country = country.title()
     if fct.country_inall_countries(country, db_onu): 
         emissions_tojson = fct.per_capita_to_json(country, db_onu)
-        return emissions_tojson
+        return jsonify(emissions_tojson)
     else:
         #erreur 404 si on demande un pays qui n'est pas connu
         abort(404)
