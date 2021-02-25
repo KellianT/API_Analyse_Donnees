@@ -1,28 +1,27 @@
 import unittest
-from app_onu import per_capita, by_country, average_for_year, hello_world
+from fonctions import voir_csv, by_country_to_json, mean_to_json, per_capita_to_json
+
+db_onu = voir_csv('onu.csv')
 
 class TestMethods(unittest.TestCase):
 
-    def test_hello(self):
+
+    def test_by_country_to_json(self):
         """Teste les valeurs références."""
-        #for value, expected in self.test_values:
-        self.assertEqual('Hello, World', hello_world())
-        
+        self.assertEqual(by_country_to_json('Italy', db_onu), { "Country": "Italy", "Year": 2017, "Value": 321481.224 })
+        self.assertEqual(by_country_to_json('Albania', db_onu), { "Country": "Albania", "Year": 2017, "Value": 4342.011 })
+        self.assertIsInstance(by_country_to_json('France', db_onu), dict)
 
-
-
-    def test_by_country(self):
+    def test_mean_to_json(self):
         """Teste les valeurs références."""
-        #for value, expected in self.test_values:
-        self.assertTrue('[{"Country": "Albania", "Year": 2017, "Value": 4342.011}]', by_country('Albania'))
-       
+        self.assertEqual(mean_to_json('1975', db_onu), { "year": "1975", "total": 112083.79604545454 })
+        self.assertEqual(mean_to_json('2015', db_onu), { "year": "2015", "total": 217617.02909154928 })
+        self.assertIsInstance(mean_to_json('1970', db_onu), dict)
 
 
-    def test_per_capita(self):
-        """ Test la fonction Per_Capita"""
-        self.assertTrue('[{"Year": 1995, "Value": 7.845}, {"Year": 1985, "Value": 6.209}, {"Year": 1995, "Value": 5.773}, {"Year": 2005, "Value": 5.887}, {"Year": 2010, "Value": 5.233}, {"Year": 2015, "Value": 4.5}, {"Year": 2016, "Value": 4.515}, {"Year": 2017, "Value": 4.565}]', per_capita('France'))
-        
-
+    def test_per_capita_to_json(self):
+        """Teste les valeurs références."""
+        self.assertIsInstance(per_capita_to_json('Benin', db_onu), dict)
 
 
 if __name__ == '__main__':
