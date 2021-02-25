@@ -28,12 +28,12 @@ def year_inall_years(year, db_onu):
 
 def by_country_to_json(country,db_onu):
     country_emission = db_onu[(db_onu["Country"] == country) & (db_onu["Year"]==2017)].head(1)
-    # result = country_emission[['Country', 'Year', 'Value']].to_json(orient='records')
-    # parsed = json.loads(result)
-    # return json.dumps(parsed)
-    result = country_emission[['Country', 'Year', 'Value']].to_json(orient='records')
-    parsed = json.loads(result)
-    return parsed
+    result = {}
+    result['Country'] = str(country_emission.iloc[0][1])
+    result['Year'] = int(country_emission.iloc[0][2])
+    result['Value'] = float(country_emission.iloc[0][4])
+    return result
+
 
 
 def mean_to_json(year, db_onu): 
@@ -52,6 +52,4 @@ def per_capita_to_json(country, db_onu):
     result = df_capita.to_json(orient='records')
     parsed = json.loads(result)
     # return json.dumps(parsed)
-    return parsed
-
-    
+    return parsed    
