@@ -49,7 +49,13 @@ def mean_to_json(year, db_onu):
 def per_capita_to_json(country, db_onu):
     df_capita = db_onu[(db_onu["Country"] == country) & (db_onu["Emission"]=="Emissions per capita (metric tons of carbon dioxide)")]  
     df_capita = df_capita[['Year', 'Value']]
-    result = df_capita.to_json(orient='records')
-    parsed = json.loads(result)
-    # return json.dumps(parsed)
-    return parsed    
+    result = {}
+    for i in range(len(df_capita)):
+        key = int(df_capita.iloc[i][0])
+        value = float(df_capita.iloc[i][1])
+        result[key] = value
+    return result
+   
+
+db_onu = voir_csv('onu.csv')
+print(per_capita_to_json('Albania', db_onu))
