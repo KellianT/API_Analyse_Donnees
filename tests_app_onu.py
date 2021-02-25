@@ -43,7 +43,7 @@ class TestAverageByYear(unittest.TestCase):
     def test_average_by_year_data(self):
         self.app = app.test_client()
         result = self.app.get("/average_by_year/2015")
-        self.assertTrue(result.data, 'year')
+        self.assertTrue(b'rrrrrr' in result.data)
 
 # test complémetnaire sur une valeur précise (pas forcement pertinent)
     def test_average_by_year_specific_data(self):
