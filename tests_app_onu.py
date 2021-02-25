@@ -1,6 +1,6 @@
 import unittest
-from flask import Flask
-from app_onu import app, hello_world, average_for_year
+from app_onu import app
+# from flask import Flask
 
 
 class TestAppFlask(unittest.TestCase):
@@ -11,16 +11,15 @@ class TestAppFlask(unittest.TestCase):
         self.app = app.test_client()
         result = self.app.get('/')
         # assert the status code of the response
-        self.assertEqual(result.status_code, 200) 
+        self.assertEqual(result.status_code, 200)
 
     def test_hello_world(self):
         # sends HTTP GET request to the application
         # on the specified path
         self.app = app.test_client()
-        result = self.app.get('/') 
+        result = self.app.get('/')
         # assert the response data
-        self.assertEqual(result.data, b'Hello, World') # voir pourquoi il y a b avant la sortie...???
-
+        self.assertEqual(result.data, b'Hello, World')
 
 
 class TestAverageByYear(unittest.TestCase):
@@ -31,7 +30,7 @@ class TestAverageByYear(unittest.TestCase):
         self.app = app.test_client()
         result = self.app.get("/average_by_year/2015")
         # assert the status code of the response
-        self.assertEqual(result.status_code, 200) 
+        self.assertEqual(result.status_code, 200)
 
     def test_average_by_year_type(self):
         # sends HTTP GET request to the application
@@ -47,7 +46,7 @@ class TestAverageByYear(unittest.TestCase):
         # self.assertTrue(b'Total' in response.data)
         self.assertTrue(b'year' in result.data)
 
-#test complémetnaire sur une valeur précise (pas forcement pertinent)
+# test complémetnaire sur une valeur précise (pas forcement pertinent)
     def test_average_by_year_specific_data(self):
         self.app = app.test_client()
         result = self.app.get("/average_by_year/2015")
