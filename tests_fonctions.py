@@ -10,6 +10,14 @@ df = voir_csv('onu.csv')
 
 class TestMethods(unittest.TestCase):
 
+    def test_country_inall_countries(self):
+        self.assertTrue(country_inall_countries('france', df))
+        self.assertFalse(country_inall_countries('Disneyland', df))
+
+    def test_year_inall_years(self):
+        self.assertTrue(year_inall_years(2015, df))
+        self.assertFalse(year_inall_years(1974, df))
+
     def test_by_country_to_json(self):
         """Teste les valeurs références."""
         self.assertEqual(by_country_to_json('Italy', df), {"Country": "Italy", "Year": 2017, "Value": 321481.224})
@@ -26,10 +34,7 @@ class TestMethods(unittest.TestCase):
         """Teste les valeurs références."""
         self.assertIsInstance(per_capita_to_json('Benin', df), dict)
 
-    def test_country_inall_countries(self):
-        # country = country.title()
-        # countries = list(set(df['Country'].to_list()))
-        self.assertTrue(country_inall_countries('france', df))
+    
 
 
 if __name__ == '__main__':
