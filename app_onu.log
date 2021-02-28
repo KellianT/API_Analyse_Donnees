@@ -39,3 +39,209 @@
 25/02/2021 21:04:13 WARNING -  * Debugger is active!
 25/02/2021 21:04:13 INFO -  * Debugger PIN: 228-943-247
 25/02/2021 21:04:13 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:08:44 INFO -  * Restarting with stat
+25/02/2021 21:08:48 WARNING -  * Debugger is active!
+25/02/2021 21:08:48 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:08:48 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:41:19 INFO -  * Restarting with stat
+25/02/2021 21:41:21 WARNING -  * Debugger is active!
+25/02/2021 21:41:21 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:41:21 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:41:29 INFO - 127.0.0.1 - - [25/Feb/2021 21:41:29] "[37mGET / HTTP/1.1[0m" 200 -
+25/02/2021 21:41:40 INFO - Pays demandé : italy
+25/02/2021 21:41:40 INFO - création de la base de données
+25/02/2021 21:41:40 INFO - vérification si le pays demandé existe
+25/02/2021 21:41:40 INFO - création du dictionnaire dans fonction by_country_to_json
+25/02/2021 21:41:40 INFO - 127.0.0.1 - - [25/Feb/2021 21:41:40] "[37mGET /latest_by_country/italy HTTP/1.1[0m" 200 -
+25/02/2021 21:41:49 INFO - Année demandée : 2017
+25/02/2021 21:41:49 INFO - création de la base de données
+25/02/2021 21:41:49 INFO - vérification si l'année demandée existe
+25/02/2021 21:41:49 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 21:41:49 INFO - 127.0.0.1 - - [25/Feb/2021 21:41:49] "[37mGET /average_by_year/2017 HTTP/1.1[0m" 200 -
+25/02/2021 21:42:00 INFO - Pays demandé : ITALY
+25/02/2021 21:42:00 INFO - création de la base de données
+25/02/2021 21:42:00 INFO - vérification si le pays demandé existe
+25/02/2021 21:42:00 INFO - création du dictionnaire dans fonction per_capita_to_json
+25/02/2021 21:42:00 INFO - 127.0.0.1 - - [25/Feb/2021 21:42:00] "[37mGET /per_capita/ITALY HTTP/1.1[0m" 200 -
+25/02/2021 21:43:51 INFO -  * Restarting with stat
+25/02/2021 21:43:52 WARNING -  * Debugger is active!
+25/02/2021 21:43:52 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:43:52 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:43:57 INFO - Pays demandé : ITALY
+25/02/2021 21:43:57 INFO - création de la base de données
+25/02/2021 21:43:57 INFO - vérification si le pays demandé existe
+25/02/2021 21:43:57 INFO - création du dictionnaire dans fonction per_capita_to_json
+25/02/2021 21:43:57 INFO - 127.0.0.1 - - [25/Feb/2021 21:43:57] "[37mGET /per_capita/ITALY HTTP/1.1[0m" 200 -
+25/02/2021 21:44:13 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\fonctions.py', reloading
+25/02/2021 21:44:13 INFO -  * Restarting with stat
+25/02/2021 21:44:15 WARNING -  * Debugger is active!
+25/02/2021 21:44:15 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:44:15 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:44:25 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\fonctions.py', reloading
+25/02/2021 21:44:25 INFO -  * Restarting with stat
+25/02/2021 21:44:27 WARNING -  * Debugger is active!
+25/02/2021 21:44:27 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:44:27 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:44:35 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\fonctions.py', reloading
+25/02/2021 21:44:35 INFO -  * Restarting with stat
+25/02/2021 21:44:37 WARNING -  * Debugger is active!
+25/02/2021 21:44:37 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:44:37 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 21:45:14 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\app_onu.py', reloading
+25/02/2021 21:45:15 INFO -  * Restarting with stat
+25/02/2021 21:45:16 WARNING -  * Debugger is active!
+25/02/2021 21:45:16 INFO -  * Debugger PIN: 228-943-247
+25/02/2021 21:45:16 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+25/02/2021 23:14:21 INFO - Année demandée : 2015
+25/02/2021 23:14:21 INFO - création de la base de données
+25/02/2021 23:14:21 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:21 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:21 INFO - Année demandée : 2015
+25/02/2021 23:14:21 INFO - création de la base de données
+25/02/2021 23:14:21 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:21 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:21 INFO - Année demandée : 2015
+25/02/2021 23:14:21 INFO - création de la base de données
+25/02/2021 23:14:21 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:21 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:21 INFO - Année demandée : 2015
+25/02/2021 23:14:21 INFO - création de la base de données
+25/02/2021 23:14:21 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:21 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:37 INFO - Année demandée : 2015
+25/02/2021 23:14:37 INFO - création de la base de données
+25/02/2021 23:14:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:37 INFO - Année demandée : 2015
+25/02/2021 23:14:37 INFO - création de la base de données
+25/02/2021 23:14:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:37 INFO - Année demandée : 2015
+25/02/2021 23:14:37 INFO - création de la base de données
+25/02/2021 23:14:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:14:37 INFO - Année demandée : 2015
+25/02/2021 23:14:37 INFO - création de la base de données
+25/02/2021 23:14:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:14:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:20 INFO - Année demandée : 2015
+25/02/2021 23:26:20 INFO - création de la base de données
+25/02/2021 23:26:20 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:20 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:20 INFO - Année demandée : 2015
+25/02/2021 23:26:20 INFO - création de la base de données
+25/02/2021 23:26:20 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:20 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:20 INFO - Année demandée : 2015
+25/02/2021 23:26:20 INFO - création de la base de données
+25/02/2021 23:26:20 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:20 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:20 INFO - Année demandée : 2015
+25/02/2021 23:26:20 INFO - création de la base de données
+25/02/2021 23:26:20 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:20 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:37 INFO - Année demandée : 2015
+25/02/2021 23:26:37 INFO - création de la base de données
+25/02/2021 23:26:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:37 INFO - Année demandée : 2015
+25/02/2021 23:26:37 INFO - création de la base de données
+25/02/2021 23:26:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:37 INFO - Année demandée : 2015
+25/02/2021 23:26:37 INFO - création de la base de données
+25/02/2021 23:26:37 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:37 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:26:37 INFO - Année demandée : 2015
+25/02/2021 23:26:37 INFO - création de la base de données
+25/02/2021 23:26:38 INFO - vérification si l'année demandée existe
+25/02/2021 23:26:38 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:43 INFO - Année demandée : 2015
+25/02/2021 23:28:43 INFO - création de la base de données
+25/02/2021 23:28:43 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:43 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:43 INFO - Année demandée : 2015
+25/02/2021 23:28:43 INFO - création de la base de données
+25/02/2021 23:28:43 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:43 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:43 INFO - Année demandée : 2015
+25/02/2021 23:28:43 INFO - création de la base de données
+25/02/2021 23:28:43 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:43 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:43 INFO - Année demandée : 2015
+25/02/2021 23:28:43 INFO - création de la base de données
+25/02/2021 23:28:43 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:43 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:56 INFO - Année demandée : 2015
+25/02/2021 23:28:56 INFO - création de la base de données
+25/02/2021 23:28:56 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:56 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:57 INFO - Année demandée : 2015
+25/02/2021 23:28:57 INFO - création de la base de données
+25/02/2021 23:28:57 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:57 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:57 INFO - Année demandée : 2015
+25/02/2021 23:28:57 INFO - création de la base de données
+25/02/2021 23:28:57 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:57 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:28:57 INFO - Année demandée : 2015
+25/02/2021 23:28:57 INFO - création de la base de données
+25/02/2021 23:28:57 INFO - vérification si l'année demandée existe
+25/02/2021 23:28:57 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:29:09 INFO - Année demandée : 2015
+25/02/2021 23:29:09 INFO - création de la base de données
+25/02/2021 23:29:09 INFO - vérification si l'année demandée existe
+25/02/2021 23:29:09 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:29:09 INFO - Année demandée : 2015
+25/02/2021 23:29:09 INFO - création de la base de données
+25/02/2021 23:29:09 INFO - vérification si l'année demandée existe
+25/02/2021 23:29:09 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:29:09 INFO - Année demandée : 2015
+25/02/2021 23:29:09 INFO - création de la base de données
+25/02/2021 23:29:09 INFO - vérification si l'année demandée existe
+25/02/2021 23:29:09 INFO - création du dictionnaire dans fonction mean_to_json
+25/02/2021 23:29:09 INFO - Année demandée : 2015
+25/02/2021 23:29:09 INFO - création de la base de données
+25/02/2021 23:29:09 INFO - vérification si l'année demandée existe
+25/02/2021 23:29:09 INFO - création du dictionnaire dans fonction mean_to_json
+26/02/2021 15:18:23 INFO -  * Restarting with stat
+26/02/2021 15:18:24 WARNING -  * Debugger is active!
+26/02/2021 15:18:24 INFO -  * Debugger PIN: 228-943-247
+26/02/2021 15:18:24 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+26/02/2021 15:18:45 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:45] "[37mGET / HTTP/1.1[0m" 200 -
+26/02/2021 15:18:47 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:47] "[37mGET / HTTP/1.1[0m" 200 -
+26/02/2021 15:18:48 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:48] "[37mGET / HTTP/1.1[0m" 200 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[35m[1mGET /index HTTP/1.1[0m" 500 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[37mGET /index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[37mGET /index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[37mGET /index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[37mGET /index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[37mGET /index?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1[0m" 200 -
+26/02/2021 15:18:58 INFO - 127.0.0.1 - - [26/Feb/2021 15:18:58] "[37mGET /index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+26/02/2021 15:19:58 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\app_onu.py', reloading
+26/02/2021 15:19:58 INFO -  * Restarting with stat
+26/02/2021 15:20:00 WARNING -  * Debugger is active!
+26/02/2021 15:20:00 INFO -  * Debugger PIN: 228-943-247
+26/02/2021 15:20:00 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+26/02/2021 15:20:17 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\app_onu.py', reloading
+26/02/2021 15:20:17 INFO -  * Restarting with stat
+26/02/2021 15:20:20 WARNING -  * Debugger is active!
+26/02/2021 15:20:20 INFO -  * Debugger PIN: 228-943-247
+26/02/2021 15:20:20 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+26/02/2021 15:20:28 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:28] "[35m[1mGET /index HTTP/1.1[0m" 500 -
+26/02/2021 15:20:28 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:28] "[37mGET /index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+26/02/2021 15:20:28 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:28] "[37mGET /index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+26/02/2021 15:20:28 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:28] "[37mGET /index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+26/02/2021 15:20:28 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:28] "[37mGET /index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+26/02/2021 15:20:41 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\app_onu.py', reloading
+26/02/2021 15:20:42 INFO -  * Restarting with stat
+26/02/2021 15:20:44 WARNING -  * Debugger is active!
+26/02/2021 15:20:44 INFO -  * Debugger PIN: 228-943-247
+26/02/2021 15:20:44 INFO -  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+26/02/2021 15:20:49 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:49] "[35m[1mGET /index HTTP/1.1[0m" 500 -
+26/02/2021 15:20:49 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:49] "[37mGET /index?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1[0m" 200 -
+26/02/2021 15:20:49 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:49] "[37mGET /index?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 200 -
+26/02/2021 15:20:49 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:49] "[37mGET /index?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 200 -
+26/02/2021 15:20:49 INFO - 127.0.0.1 - - [26/Feb/2021 15:20:49] "[37mGET /index?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 200 -
+26/02/2021 16:37:06 INFO -  * Detected change in 'C:\\Users\\utilisateur\\Documents\\API_Analyse_Donnees\\app_onu.py', reloading
+26/02/2021 16:37:06 INFO -  * Restarting with stat

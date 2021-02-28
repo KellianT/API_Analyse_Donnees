@@ -1,6 +1,6 @@
 import fonctions as fct
 import logging
-from flask import Flask, abort, jsonify
+from flask import Flask, abort, jsonify, render_template, request, url_for, flash, redirect
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 
@@ -17,8 +17,12 @@ logging.basicConfig(
     datefmt='%d/%m/%Y %H:%M:%S',)
 
 
+
+
 @app.route('/')
 def hello_world():
+    """
+    """
     # utilisé pour tester si l'app fonctionne bien
     return 'Hello, World'
 
