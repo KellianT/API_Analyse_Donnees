@@ -21,6 +21,29 @@ class TestAppFlask(unittest.TestCase):
         # assert the response data
         self.assertEqual(result.data, b'Hello, World')
 
+class TestLatestByCountry(unittest.TestCase):
+    
+    def test_latest_by_country_status(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        self.app = app.test_client()
+        result = self.app.get("/latest_by_country/France")
+        # assert the status code of the response
+        self.assertEqual(result.status_code, 200)
+
+    def test_latest_by_country_type(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        self.app = app.test_client()
+        result = self.app.get("/latest_by_country/France")
+        # assert the type of the response
+        self.assertEqual(result.content_type, "application/json")
+
+    def test_latest_by_country_data(self):
+        self.app = app.test_client()
+        result = self.app.get("/latest_by_country/France")
+        self.assertTrue(b'Country' in result.data)
+
 
 class TestAverageByYear(unittest.TestCase):
 

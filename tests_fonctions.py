@@ -3,12 +3,24 @@ from fonctions import voir_csv
 from fonctions import country_inall_countries, year_inall_years
 from fonctions import by_country_to_json, mean_to_json
 from fonctions import per_capita_to_json
-# import pandas
+import pandas
 
 df = voir_csv('onu.csv')
 
 
 class TestMethods(unittest.TestCase):
+
+    def test_voir_csv(self):
+        self.assertIsInstance(voir_csv('onu.csv'), pandas.core.frame.DataFrame)
+        self.assertTrue("Country" in voir_csv('onu.csv'))
+
+    def test_country_inall_countries(self):
+        self.assertTrue(country_inall_countries('france', df))
+        self.assertFalse(country_inall_countries('Disneyland', df))
+
+    def test_year_inall_years(self):
+        self.assertTrue(year_inall_years(2015, df))
+        self.assertFalse(year_inall_years(1974, df))
 
     def test_by_country_to_json(self):
         """Teste les valeurs références."""
@@ -25,11 +37,10 @@ class TestMethods(unittest.TestCase):
     def test_per_capita_to_json(self):
         """Teste les valeurs références."""
         self.assertIsInstance(per_capita_to_json('Benin', df), dict)
+        self.assertTrue(1975 in per_capita_to_json('France', df))
+        self.assertFalse(1974 in per_capita_to_json('France', df))
 
-    def test_country_inall_countries(self):
-        # country = country.title()
-        # countries = list(set(df['Country'].to_list()))
-        self.assertTrue(country_inall_countries('france', df))
+    
 
 
 if __name__ == '__main__':
