@@ -29,7 +29,15 @@ IMPORTANT :
    Les requêtes seront à executées dans le navigateur WEB aprés lancement de l'API Flask. Le serveur étant hebergé localement pour cette exercice, la requête sur le navigateur prendra la forme suivante : http://127.0.0.1:5000/latest_by_country/France
     
    De plus, le format de retour de données associé au brief @Simplon se présente sous le format JSON.
-
+   
+   
+  STRUCTURE DE L'API:
+  
+  Notre API se compose de
+   
+  METHODE DE TEST:
+  
+Nous avons choisis de séparer nos fichiers de test. Nous dispons d'un fichier contenant les test relatifs à l'API
 
 
 
