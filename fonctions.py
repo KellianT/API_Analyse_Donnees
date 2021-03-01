@@ -3,6 +3,9 @@ import pandas
 
 
 def voir_csv(csv):
+
+    """This function return the CSV file in Pandas data format """
+
     logging.info("création de la base de données")
     db_onu = pandas.read_csv(csv, header=2, names=['num', 'Country', 'Year', 'Emission', 'Value', 'Footnote', 'Source'])
     return db_onu
