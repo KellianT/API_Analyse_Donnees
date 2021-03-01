@@ -32,7 +32,7 @@ def country_inall_countries(country, db_onu):
 def year_inall_years(year, db_onu):
     """ This function checks whether the set year
     is included into the database (db_onu).
-    Parameter : a year (ex: 2015), a database
+    Parameter: a year (ex: 2015), a database
     Returns : True or Flase
     Example : 2015 returns true, 1974 returns false
     """
