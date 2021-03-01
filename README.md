@@ -53,7 +53,7 @@ IMPORTANT :
 Nous avons choisis de séparer nos fichiers de test. Nous dispons d'un fichier contenant les test relatifs à l'API
 
 Le fichier tests_app_onu.py teste les trois routes principales; Pour chaque route, les tests unitaires sont: 
-- le code de retour de la requête (vérification que la requête renvoie 200)
+- le code de retour de la requête (vérification que la requête renvoie 200, 200 étant le code de retour "OK")
 - le type des données retournées (json)
 - la présence d'un mot précis contenu dans les données retournées (ex: pour la route 'latest_by_country', vérification de la présence du mot 'Country')
 
