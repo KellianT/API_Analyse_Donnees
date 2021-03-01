@@ -7,13 +7,6 @@ Le but du brief était de développer une API d'analyse de données pour une ONG
 
 Cette API, réalisée avec Flask, nous permettra, à partir d'un fichier CSV fourni, de tirer parti des informations contenues à l'intérieur du fichier téléchargable sur le site de l'ONU(https://data.un.org/_Docs/SYB/CSV/SYB63_310_202009_Carbon%20Dioxide%20Emission%20Estimates.csv)
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-LANCEMENT DE L'API : 
-
-Afin de lancer l'API et mettre à disposition le serveur Flask, il nous faudra lancer le fichier app_onu.py et se rendre à l'addresse suivante : http://127.0.0.1:5000/
-(voir FONCTIONNEMENT DE L'API)
-
 Ce fichier CSV contient plusieurs colonnes : 
    - l'ID du pays
    - le nom du pays
@@ -22,6 +15,15 @@ Ce fichier CSV contient plusieurs colonnes :
    - la valeur de ces émissions
    - des notes sur le territoire
    - la source des informations
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+LANCEMENT DE L'API : 
+
+Afin de lancer l'API et mettre à disposition le serveur Flask, il nous faudra lancer le fichier app_onu.py et se rendre à l'addresse suivante : http://127.0.0.1:5000/
+(voir FONCTIONNEMENT DE L'API)
+
+
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
