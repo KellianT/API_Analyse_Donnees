@@ -21,8 +21,9 @@ class TestAppFlask(unittest.TestCase):
         # assert the response data
         self.assertEqual(result.data, b'Hello, World')
 
+
 class TestLatestByCountry(unittest.TestCase):
-    
+
     def test_latest_by_country_status(self):
         # sends HTTP GET request to the application
         # on the specified path
@@ -68,11 +69,29 @@ class TestAverageByYear(unittest.TestCase):
         result = self.app.get("/average_by_year/2015")
         self.assertTrue(b'year' in result.data)
 
-# test complémetnaire sur une valeur précise (pas forcement pertinent)
-    def test_average_by_year_specific_data(self):
+
+class TestPerCapits(unittest.TestCase):
+
+    def test_per_capita_status(self):
+        # sends HTTP GET request to the application
+        # on the specified path
         self.app = app.test_client()
-        result = self.app.get("/average_by_year/2015")
-        self.assertEqual(result.data, b'{"year":"2015","total":217617.02909154928}\n')
+        result = self.app.get("/per_capita/France")
+        # assert the status code of the response
+        self.assertEqual(result.status_code, 200)
+
+    def test_per_capita_type(self):
+        # sends HTTP GET request to the application
+        # on the specified path
+        self.app = app.test_client()
+        result = self.app.get("/per_capita/France")
+        # assert the type of the response
+        self.assertEqual(result.content_type, "application/json")
+
+    def test_per_capita_data(self):
+        self.app = app.test_client()
+        result = self.app.get("/per_capita/France")
+        self.assertTrue(b'2015' in result.data)
 
 
 if __name__ == '__main__':
