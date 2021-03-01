@@ -33,7 +33,13 @@ IMPORTANT :
    
   STRUCTURE DE L'API:
   
-  Notre API se compose de
+  Notre API se compose de 6 fichiers :
+ - app_onu.py : le fichier principal qui contient les fonctions routes du système, c'est par ce fichier que l'API se lance
+ - fonctions.py : ce fichier contient les fonctions contenues dans les fonctions principales. En effet, dans un soucis de propreté et d'optimisation, nous avons choisis de scinder nos fonctions en plusieurs morceaux pouvant être à leur tour optimisées et réutilisées.
+ - tests_app_onu.py : il s'agit des fonctions de test inhérantes au fichier app_onu.py (voir Méthodes de test)
+ - tests_fonctions.py : il s'agit des fonctions de test inhérantes au fuchier fonctions.py (voir Méthodes de test)
+ - onu.csv : il s'agit du fichier CSV utilisé pour ce brief (le même que celui présenté en introduction, mais renommé dans un soucis de propreté)
+ - app_onu.log : il s'agit du fichier de logs que nous avons utilisés afin de suivre l'avancement et les eventuels problèmes que rencontre l'API
    
   METHODE DE TEST:
   
@@ -41,13 +47,7 @@ Nous avons choisis de séparer nos fichiers de test. Nous dispons d'un fichier c
 
 
 
-Le fichier tests_app_onu.py teste les trois routes principales; Pour chaque route, les tests unitaires sont: 
-- le code de retour de la requête (vérification que la requête renvoie 200)
-- le type des données retournées (json)
-- la présence d'un mot précis contenu dans les données retournées (ex: pour la route 'latest_by_country', vérification de la présence du mot 'Country')
 
-
-Le fichier tests_fonctions.py teste toutes les fonctions appelées dans le fichiers app_onu.py. (voir documentation pour plus de détails)
 
 
 
