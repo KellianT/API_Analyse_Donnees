@@ -9,7 +9,7 @@ Cette API, réalisée avec Flask, nous permettra, à partir d'un fichier CSV fou
 
 LANCEMENT DE L'API : 
 
-Afin de lancer l'API et mettre à disposition le serveur Flask, il nous faudra lancer le fichier app_onu.py et se rendre à l'addresse suivante : 127.0.0.1:5000/
+Afin de lancer l'API et mettre à disposition le serveur Flask, il nous faudra lancer le fichier app_onu.py et se rendre à l'addresse suivante : http://127.0.0.1:5000/
 (voir FONCTIONNEMENT DE L'API)
 
 Ce fichier CSV contient plusieurs colonnes : 
