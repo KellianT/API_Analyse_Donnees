@@ -41,7 +41,13 @@ Nous avons choisis de séparer nos fichiers de test. Nous dispons d'un fichier c
 
 
 
+Le fichier tests_app_onu.py teste les trois routes principales; Pour chaque route, les tests unitaires sont: 
+- le code de retour de la requête (vérification que la requête renvoie 200)
+- le type des données retournées (json)
+- la présence d'un mot précis contenu dans les données retournées (ex: pour la route 'latest_by_country', vérification de la présence du mot 'Country')
 
+
+Le fichier tests_fonctions.py teste toutes les fonctions appelées dans le fichiers app_onu.py. (voir documentation pour plus de détails)
 
 
 
