@@ -5,15 +5,16 @@ Bienvenue dans le ReadMe du groupe Yanis / Emilie / Kellian pour la promo 2020 d
 
 Le but du brief était de développer une API d'analyse de données pour une ONG.
 
-Cette API, réalisée avec Flask, nous permettra, à partir d'un fichier CSV fourni, de tirer parti des informations contenues à l'intérieur du fichier.
+Cette API, réalisée avec Flask, nous permettra, à partir d'un fichier CSV fourni, de tirer parti des informations contenues à l'intérieur du fichier téléchargable sur le site de l'ONU(https://data.un.org/_Docs/SYB/CSV/SYB63_310_202009_Carbon%20Dioxide%20Emission%20Estimates.csv)
+
 Ce fichier CSV contient plusieurs colonnes : 
-    - l'ID du pays
-    - le nom du pays
-    - l'année de référence
-    - les emissions de CO2 (global et par habitants)
-    - la veleure de ces émissions
-    - des notes sur le territoire
-    - la source des informations
+   - l'ID du pays
+   - le nom du pays
+   - l'année de référence
+   - les emissions de CO2 (global et par habitants)
+   - la valeur de ces émissions
+   - des notes sur le territoire
+   - la source des informations
 
 En l'occurence, le but était de développer 3 routes principales : 
 
