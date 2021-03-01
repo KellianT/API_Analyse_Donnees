@@ -7,6 +7,11 @@ Le but du brief était de développer une API d'analyse de données pour une ONG
 
 Cette API, réalisée avec Flask, nous permettra, à partir d'un fichier CSV fourni, de tirer parti des informations contenues à l'intérieur du fichier téléchargable sur le site de l'ONU(https://data.un.org/_Docs/SYB/CSV/SYB63_310_202009_Carbon%20Dioxide%20Emission%20Estimates.csv)
 
+LANCEMENT DE L'API : 
+
+Afin de lancer l'API et mettre à disposition le serveur Flask, il nous faudra lancer le fichier app_onu.py et se rendre à l'addresse suivante : 127.0.0.1:5000/
+(voir FONCTIONNEMENT DE L'API)
+
 Ce fichier CSV contient plusieurs colonnes : 
    - l'ID du pays
    - le nom du pays
@@ -15,6 +20,8 @@ Ce fichier CSV contient plusieurs colonnes :
    - la valeur de ces émissions
    - des notes sur le territoire
    - la source des informations
+
+FONCTIONNEMENT DE L'API :
 
 En l'occurence, le but était de développer 3 routes principales : 
 
@@ -45,7 +52,13 @@ IMPORTANT :
   
 Nous avons choisis de séparer nos fichiers de test. Nous dispons d'un fichier contenant les test relatifs à l'API
 
+Le fichier tests_app_onu.py teste les trois routes principales; Pour chaque route, les tests unitaires sont: 
+- le code de retour de la requête (vérification que la requête renvoie 200)
+- le type des données retournées (json)
+- la présence d'un mot précis contenu dans les données retournées (ex: pour la route 'latest_by_country', vérification de la présence du mot 'Country')
 
+
+Le fichier tests_fonctions.py teste toutes les fonctions appelées dans le fichiers app_onu.py. (voir documentation pour plus de détails)
 
 
 
