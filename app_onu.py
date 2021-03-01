@@ -1,7 +1,6 @@
 import fonctions as fct
 import logging
-from flask import Flask, abort, jsonify, render_template,\
-    request, url_for, flash, redirect
+from flask import Flask, abort, jsonify
 app = Flask(__name__)
 app.config['JSON_SORT_KEYS'] = False
 

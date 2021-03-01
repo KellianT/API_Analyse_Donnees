@@ -7,7 +7,9 @@ def voir_csv(csv):
     """This function return the CSV file in Pandas data format """
 
     logging.info("création de la base de données")
-    db_onu = pandas.read_csv(csv, header=2, names=['num', 'Country', 'Year', 'Emission', 'Value', 'Footnote', 'Source'])
+    db_onu = pandas.read_csv(csv, header=2, names=['num', 'Country', 'Year',
+                                                   'Emission', 'Value',
+                                                   'Footnote', 'Source'])
     return db_onu
 
 
@@ -51,7 +53,8 @@ def by_country_to_json(country, db_onu):
     {"Country": "France", "Year": 2017, "Value": 306123.541}
     """
     logging.info("création du dictionnaire dans fonction by_country_to_json")
-    country_emission = db_onu[(db_onu["Country"] == country) & (db_onu["Year"] == 2017)].head(1)
+    country_emission = db_onu[(db_onu["Country"] == country) &
+                              (db_onu["Year"] == 2017)].head(1)
     result = {}
     result['Country'] = str(country_emission.iloc[0][1])
     result['Year'] = int(country_emission.iloc[0][2])
@@ -69,7 +72,8 @@ def mean_to_json(year, db_onu):
     """
     logging.info("création du dictionnaire dans fonction mean_to_json")
     df = db_onu.loc[db_onu['Year'].isin([year])]
-    df = df[(df["Emission"] == 'Emissions (thousand metric tons of carbon dioxide)')]
+    df = df[(df["Emission"] ==
+            'Emissions (thousand metric tons of carbon dioxide)')]
     df_mean = df.mean()['Value']
     result = {}
     result['year'] = year
@@ -87,7 +91,8 @@ def per_capita_to_json(country, db_onu):
     "2010": 6.552, "2015": 5.428, "2016": 5.371, "2017": 5.31}
     """
     logging.info("création du dictionnaire dans fonction per_capita_to_json")
-    df_capita = db_onu[(db_onu["Country"] == country) & (db_onu["Emission"] == "Emissions per capita (metric tons of carbon dioxide)")]
+    df_capita = db_onu[(db_onu["Country"] ==
+                        country) & (db_onu["Emission"] == "Emissions per capita (metric tons of carbon dioxide)")]
     df_capita = df_capita[['Year', 'Value']]
     result = {}
     for i in range(len(df_capita)):

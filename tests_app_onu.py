@@ -7,7 +7,7 @@ class TestAppFlask(unittest.TestCase):
 
     def test_home_status_code(self):
         ''' Function that allows us to retrieve the response code of the query
-            sends HTTP GET request to the application 
+            sends HTTP GET request to the application
             on the specified path '''
         self.app = app.test_client()
         result = self.app.get('/')
@@ -40,7 +40,7 @@ class TestLatestByCountry(unittest.TestCase):
         self.assertEqual(result.content_type, "application/json")
 
     def test_latest_by_country_data(self):
-        ''' verification of the data in the results ''' 
+        ''' verification of the data in the results '''
         self.app = app.test_client()
         result = self.app.get("/latest_by_country/France")
         self.assertTrue(b'Country' in result.data)
