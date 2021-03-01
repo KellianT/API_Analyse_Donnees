@@ -21,6 +21,8 @@ Ce fichier CSV contient plusieurs colonnes :
    - des notes sur le territoire
    - la source des informations
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 FONCTIONNEMENT DE L'API :
 
 En l'occurence, le but était de développer 3 routes principales : 
@@ -37,6 +39,9 @@ IMPORTANT :
     
    De plus, le format de retour de données associé au brief @Simplon se présente sous le format JSON.
    
+   --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+   
    
   STRUCTURE DE L'API:
   
@@ -47,6 +52,9 @@ IMPORTANT :
  - tests_fonctions.py : il s'agit des fonctions de test inhérantes au fuchier fonctions.py (voir Méthodes de test)
  - onu.csv : il s'agit du fichier CSV utilisé pour ce brief (le même que celui présenté en introduction, mais renommé dans un soucis de propreté)
  - app_onu.log : il s'agit du fichier de logs que nous avons utilisés afin de suivre l'avancement et les eventuels problèmes que rencontre l'API
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
    
   METHODE DE TEST:
   
