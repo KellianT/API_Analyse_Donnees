@@ -14,8 +14,8 @@ class TestMethods(unittest.TestCase):
 
     def test_voir_csv(self):
 
-    """ Test if the CSV file is in pandas format
-    and if the column "Country" is is the CSV """
+        """ Test if the CSV file is in pandas format
+            and if the column 'Country' is is the CSV """
 
         self.assertIsInstance(voir_csv('onu.csv'), pandas.core.frame.DataFrame)
         self.assertTrue("Country" in voir_csv('onu.csv'))
@@ -34,7 +34,7 @@ class TestMethods(unittest.TestCase):
     def test_year_inall_years(self):
 
         """ Check if the year exists in the CSV file
-        with a year that exists and one that doesn't""""
+        with a year that exists and one that doesn't"""
 
         self.assertTrue(year_inall_years(2015, df))
         self.assertFalse(year_inall_years(1974, df))
